@@ -89,6 +89,7 @@ find_library( # Sets the name of the path variable.
               android )
 
 #位置也要注意，A B C D E F...A 引用B，B引用C 或D或E，或F或不引用，但是顺序不能变了，后者被前者引用
+#写成 log  android 也是可以的---根据名字添加； 下面是根据路径添加的
 target_link_libraries( ffmpeg-dev
                        avcodec-57
                        avfilter-6
@@ -97,4 +98,4 @@ target_link_libraries( ffmpeg-dev
                        swresample-2
                        swscale-4
                        ${log-lib}
-                        android)
+                        ${android-lib})

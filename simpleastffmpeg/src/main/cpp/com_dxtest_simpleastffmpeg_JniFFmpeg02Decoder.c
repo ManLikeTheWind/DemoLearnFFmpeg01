@@ -12,7 +12,7 @@ Administrator="ADSF"
 #include <stdio.h>
 #include <time.h>
 #include "logUtils.h"
-//#include <android/native_window.h>
+#include <android/native_window.h>
 #include <android/native_window_jni.h>
 #include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
