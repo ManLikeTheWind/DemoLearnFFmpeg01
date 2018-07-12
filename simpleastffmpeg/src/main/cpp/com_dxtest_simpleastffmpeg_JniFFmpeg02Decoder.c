@@ -229,6 +229,7 @@ JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg02Decoder_decode
 JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg02Decoder_deCodeVideo
         (JNIEnv *env, jobject instance, jstring input_, jobject surface) {
     const char *input_path = (*env)->GetStringUTFChars(env,input_, 0);
+
     //1st.注册所有组件
     av_register_all();
 

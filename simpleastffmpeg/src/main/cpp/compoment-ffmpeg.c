@@ -21,9 +21,7 @@ Administrator="ADSF"
 #define LOGI(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO,"Sheng",FORMAT,##__VA_ARGS__);
 #define LOGE(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,"Sheng",FORMAT,##__VA_ARGS__);
 
-JNIEXPORT void JNICALL
-Java_com_dxtest_ffmpegtest01_FFmpegPlayer_playMyMedia(JNIEnv *env, jobject jobj, jstring input,
-                                                      jobject surface) {
+void playMyMedia(JNIEnv *env, jobject jobj, jstring input, jobject surface) {
     char * input_char = (*env)->GetStringUTFChars(env,input,NULL);
 
     //头文件libavformat/avformat.h
