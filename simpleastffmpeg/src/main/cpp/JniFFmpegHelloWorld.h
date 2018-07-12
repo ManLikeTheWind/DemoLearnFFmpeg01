@@ -12,10 +12,10 @@ Administrator="ADSF"
 
 
 
+
 #include <jni.h>
 
 
-extern "C"{
 JNIEXPORT jstring JNICALL
 Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_stringFromJNI(JNIEnv *env, jobject instance);
 
@@ -39,5 +39,4 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_avfilterinfo(JNIEnv *env, jo
 JNIEXPORT jstring JNICALL
 Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_configurationinfo(JNIEnv *env,  jobject instance);
 
-};
 #endif //DEMOLEARNFFMPEG01_JNIFFMPEGAPPLICAION_H

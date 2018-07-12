@@ -1,5 +1,7 @@
 package com.dxtest.simpleastffmpeg;
 
+import android.view.Surface;
+
 import com.dxtest.simpleastffmpeg.base.BaseJniFFmpegApplication;
 
 /**
@@ -15,5 +17,6 @@ public class JniFFmpeg02Decoder extends BaseJniFFmpegApplication {
 
     public native int decode(String inputurl,String outputurl);
 
+    public native int deCodeVideo(String input, Surface surface);
 
 }

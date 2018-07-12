@@ -13,7 +13,10 @@ extern "C" {
  * Signature: (Ljava/lang/String;Ljava/lang/String;)I
  */
 JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg02Decoder_decode
-  (JNIEnv * env, jobject jobj, jstring jinputurl, jstring joutputurl);
+  (JNIEnv *, jobject, jstring, jstring);
+
+JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg02Decoder_deCodeVideo
+(JNIEnv *env, jobject instance, jstring input_, jobject surface);
 
 #ifdef __cplusplus
 }

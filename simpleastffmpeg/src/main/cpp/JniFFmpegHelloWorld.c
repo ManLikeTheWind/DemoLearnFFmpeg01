@@ -26,20 +26,16 @@
  */
 
 #include <jni.h>
-#include <string>
 #include "logUtils.h"
-extern "C"{
 #include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
 #include "libavfilter/avfilter.h"
-}
 
 #undef LOG_TAG
 #define LOG_TAG "Information-Application"
 
 //FIX
 struct URlProtocol;
-extern "C"{
 
 JNIEXPORT jstring JNICALL
 Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_stringFromJNI(
@@ -50,7 +46,7 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_stringFromJNI(
 
     char info[10000] = { 0 };
     sprintf(info, "%s\n", avcodec_configuration());
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 
 /** Protocol:  FFmpeg类库支持的协议 Information */
@@ -72,7 +68,7 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_urlprotocolinfo( JNIEnv *env
         sprintf(info,"%s[Out][%10s]\n",info,avio_enum_protocols((void**)p_temp,1));
     }
     LOGE("Protocol %s",info);
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 /** AVFormat:  FFmpeg类库支持的封装格式 */
 JNIEXPORT jstring JNICALL
@@ -94,7 +90,7 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_avformatinfo(JNIEnv *env, jo
         of_temp=of_temp->next;
     }
     LOGE("avformat  %s",info);
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 
 /**  AVCodec:   FFmpeg类库支持的编解码器*/
@@ -128,7 +124,7 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_avcodecinfo(JNIEnv *env, job
 
     LOGE("avcodec  %s",info);
 
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 
 /** AVFilter:  FFmpeg类库支持的滤镜*/
@@ -141,7 +137,7 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_avfilterinfo(JNIEnv *env, jo
         sprintf(info,"%s[%10s]\n",info,f_temp->name);
     }
     LOGE("avfilter %s",info);
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 
 /** Configure: FFmpeg类库的配置信息 */
@@ -154,10 +150,9 @@ Java_com_dxtest_simpleastffmpeg_JniFFmpegHelloWorld_configurationinfo(JNIEnv *en
 
     LOGE("avcodec-configuration %s",info);
 
-    return env->NewStringUTF(info);
+    return (*env)->NewStringUTF(env,info);
 }
 
 
-}
 
 

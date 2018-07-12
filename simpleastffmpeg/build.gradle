@@ -14,7 +14,8 @@ android {
         /**cmakelists----4-3*/
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11"
+                cppFlags "-frtti -fexceptions "//"-std=c++11"
+                arguments '-DANDROID_PLATFORM=ANDROID-19','-DANDROID_STL=gnustl_static'/*,'DANDROID_TOOLCHAIN=clang'*/
             }
             ndk{//注意这里，最好只添加armeabi，不然你还需要其他的cpu类型的包，
                 abiFilters "armeabi"
@@ -37,7 +38,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            jniDebuggable true
+            debuggable = true
+            jniDebuggable = true
         }
     }
 
