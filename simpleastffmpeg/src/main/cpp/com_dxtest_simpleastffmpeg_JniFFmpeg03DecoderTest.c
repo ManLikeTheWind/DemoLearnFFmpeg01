@@ -17,7 +17,7 @@ Administrator="ADSF"
 #include "libavutil/imgutils.h"
 #include "libswscale/swscale.h"
 
-
+#include "com_dxtest_simpleastffmpeg_JniFFmpeg03DecoderTest.h"
 #include "logUtils.h"
 
 #undef LOG_TAG
