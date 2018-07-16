@@ -99,5 +99,7 @@ javah [options] [classes]
 ***运行指令：***
 E:\2018-4-3_dongxiang\workspace\DemoLearnFFmpeg01\simpleastffmpeg\src\main\java>  javah  com.dxtest.simpleastffmpeg.JniFFmpegHelloWorld
 E:\2018-4-3_dongxiang\workspace\DemoLearnFFmpeg01\simpleastffmpeg\src\main\java>  javah -classpath ./ -jni com.dxtest.simpleastffmpeg.JniFFmpegHelloWorld
+E:\2018-4-3_dongxiang\workspace\DemoLearnFFmpeg01\simpleastffmpeg\src\main\java> javah -classpath F:\sdk\platforms\android-10\android.jar;. com.dxtest.simpleastffmpeg.JniFFmpeg03DecoderTest
+
 
 
