@@ -57,6 +57,15 @@ public class Demo1DecodeActivity extends AppCompatActivity {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_decode:
+                //是原视频的储存地址
+                String selectedAviFile=file.getAbsolutePath();
+                //压缩后的视频的储存地址
+                String compressedFile=file.getAbsolutePath();
+        String cmds= "ffmpeg -y -i "
+                    + selectedAviFile
+                    + " -strict -2 -vcodec libx264 -preset ultrafast -crf 20 -acodec copy -ar 44100 -ac 2 -b:a 96k -vf scale=-1:800 "
+                    + compressedFile;
+
                 break;
             case R.id.btn_play:
                 if (mPlayThread!=null){

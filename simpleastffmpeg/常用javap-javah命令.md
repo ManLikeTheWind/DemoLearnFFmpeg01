@@ -103,3 +103,7 @@ E:\2018-4-3_dongxiang\workspace\DemoLearnFFmpeg01\simpleastffmpeg\src\main\java>
 
 
 
+异常 总结：
+1. 错误: 编码GBK的不可映射字符 ： 添加 -encoding utf-8
+    E:\2018-4-3_dongxiang\workspace\DemoLearnFFmpeg01\simpleastffmpeg\src\main\java>javah -encoding utf-8  com.dxtest.simpleastffmpeg.threadpool.ThreadPoo
+

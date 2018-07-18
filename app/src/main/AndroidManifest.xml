@@ -11,11 +11,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".DecodeActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".DecodeActivity"></activity>
+        <activity android:name=".temp.Demo1DecodeActivity">
 
         </activity>
-        <activity android:name=".temp.Demo1DecodeActivity">
+        <activity android:name=".temp.Demo2PThreadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

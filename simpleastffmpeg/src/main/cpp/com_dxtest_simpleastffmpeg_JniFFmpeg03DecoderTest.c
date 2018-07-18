@@ -11,6 +11,7 @@ Administrator="ADSF"
 #include <jni.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
+#include <libswresample/swresample.h>
 
 #include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
@@ -77,7 +78,7 @@ JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg03DecoderTest_de
     AVFrame *pFrame=av_frame_alloc();
     //6.3 存放或转换为RGBA后的数据；
     AVFrame *pFrameRGBA=av_frame_alloc();
-    //6.4 用于格式转换的SwsContext：
+    //6.4 用于格式转换的SwsContext：  分配重采样SwrContext
     // 由于解码出来的帧格式不是RGBA的，在渲染之前需要进行格式转换
     struct SwsContext *sws_ctx=sws_getContext(pCodecCtx->width, pCodecCtx->height, pCodecCtx->pix_fmt,
                                               pCodecCtx->width, pCodecCtx->height, AV_PIX_FMT_RGBA,
@@ -121,6 +122,7 @@ JNIEXPORT jint JNICALL Java_com_dxtest_simpleastffmpeg_JniFFmpeg03DecoderTest_de
     av_free(pPacket);
     av_free(pFrame);
     av_free(pFrameRGBA);
+    swr_free(&sws_ctx);
 
     //8.关闭解码器
     avcodec_close(pCodecCtx);

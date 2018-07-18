@@ -15,7 +15,7 @@ import com.dxtest.simpleastffmpeg.base.BaseJniFFmpegApplication;
 
 public class JniFFmpeg03DecoderTest extends BaseJniFFmpegApplication {
 
-    public native int decode(String inputurl,String outputurl);
+    public native static void  decode(String inputurl,String outputurl);
 
     public native int deCodeVideo(String input, Surface surface);
 }
